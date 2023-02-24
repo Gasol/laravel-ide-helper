@@ -2,14 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithFqn;
+namespace Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GenericsSyntaxDisabled;
 
 use Barryvdh\LaravelIdeHelper\Console\ModelsCommand;
 use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\AbstractModelsCommand;
-use Barryvdh\LaravelIdeHelper\Tests\Console\ModelsCommand\GeneratePhpdocWithFqn\Models\Post;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Filesystem\Filesystem;
 use Mockery;
 
@@ -20,11 +16,11 @@ class Test extends AbstractModelsCommand
         parent::getEnvironmentSetUp($app);
 
         $app['config']->set('ide-helper', [
-            'use_generics_annotations' => true,
+            'use_generics_annotations' => false,
             'model_locations' => [
                 // This is calculated from the base_path() which points to
                 // vendor/orchestra/testbench-core/laravel
-                '/../../../../tests/Console/ModelsCommand/GeneratePhpdocWithFqn/Models',
+                '/../../../../tests/Console/ModelsCommand/GenericsSyntaxDisabled/Models',
             ],
         ]);
     }
@@ -35,7 +31,7 @@ class Test extends AbstractModelsCommand
         $mockFilesystem = Mockery::mock(Filesystem::class);
         $mockFilesystem
             ->shouldReceive('get')
-            ->andReturn(file_get_contents(__DIR__ . '/Models/Post.php'))
+            ->andReturn(file_get_contents(__DIR__ . '/Models/Simple.php'))
             ->once();
         $mockFilesystem
             ->shouldReceive('put')

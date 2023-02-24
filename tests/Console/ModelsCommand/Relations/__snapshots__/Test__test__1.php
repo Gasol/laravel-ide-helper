@@ -21,22 +21,22 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
  * @property integer $id
  * @property-read Simple $relationBelongsTo
  * @property-read AnotherModel $relationBelongsToInAnotherNamespace
- * @property-read \Illuminate\Database\Eloquent\Collection|Simple[] $relationBelongsToMany
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationBelongsToMany
  * @property-read int|null $relation_belongs_to_many_count
- * @property-read \Illuminate\Database\Eloquent\Collection|Simple[] $relationBelongsToManyWithSub
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationBelongsToManyWithSub
  * @property-read int|null $relation_belongs_to_many_with_sub_count
- * @property-read \Illuminate\Database\Eloquent\Collection|Simple[] $relationBelongsToManyWithSubAnother
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationBelongsToManyWithSubAnother
  * @property-read int|null $relation_belongs_to_many_with_sub_another_count
  * @property-read AnotherModel $relationBelongsToSameNameAsColumn
- * @property-read \Illuminate\Database\Eloquent\Collection|Simple[] $relationHasMany
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationHasMany
  * @property-read int|null $relation_has_many_count
  * @property-read Simple|null $relationHasOne
  * @property-read Simple $relationHasOneWithDefault
- * @property-read \Illuminate\Database\Eloquent\Collection|Simple[] $relationMorphMany
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationMorphMany
  * @property-read int|null $relation_morph_many_count
  * @property-read Simple|null $relationMorphOne
  * @property-read Model|\Eloquent $relationMorphTo
- * @property-read \Illuminate\Database\Eloquent\Collection|Simple[] $relationMorphedByMany
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, Simple> $relationMorphedByMany
  * @property-read int|null $relation_morphed_by_many_count
  * @method static \Illuminate\Database\Eloquent\Builder|Simple newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Simple newQuery()
